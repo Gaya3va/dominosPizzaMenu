@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Domino's - Layout Replica</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --red:#e41111;
+      --dark:#222;
+      --muted:#777;
+      --container:1150px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:'Open Sans',system-ui,Helvetica,Arial; margin:20px; color:var(--dark); background:#fafafa}
+    .wrap{max-width:var(--container); margin:0 auto}
+
+    /* NAVBAR */
+    header.navbar{display:flex;align-items:center;justify-content:space-between;padding:22px 0;background:#e41111;color:#fff;border:1px solid #e6e6e6}
+    .brand{font-family:'Merriweather';font-size:34px;color:#0b61a7;margin-left:8px}
+    nav.links{display:flex;gap:26px;align-items:center}
+    nav.links a{color:#0b61a7;text-decoration:none;font-weight:600;font-size:13px;padding:8px 10px}
+    .cta{background:var(--red);color:#fff;padding:12px 20px;border-radius:4px;font-weight:700}
+
+    /* TOP SECTION */
+    .top-section{margin:26px 0;padding:26px;background:#fff;border:1px solid #eee}
+    .top-section h2{font-family:'Merriweather';font-size:26px;margin:8px 0 24px}
+    .top-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .card{background:var(--red);color:#fff;padding:30px 18px;text-align:center;min-height:320px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
+    .card .img-wrap{background:#fff;padding:12px;margin-bottom:18px}
+    .card img{width:120px;height:120px;object-fit:cover;display:block}
+    .card h3{font-family:'Merriweather';text-transform:uppercase;margin:8px 0 12px;font-size:22px;letter-spacing:1px}
+    .card p{max-width:320px;margin:0 auto 18px;line-height:1.3}
+    .card .btn{background:#fff;color:var(--red);border:2px solid rgba(255,255,255,0.3);padding:8px 18px;border-radius:3px;font-weight:700}
+
+    /* MID SECTION */
+    .mid-section{margin-top:36px;padding:28px;background:#fff;border:1px solid #eee}
+    .mid-section h2{font-family:'Merriweather';font-size:22px;margin-bottom:18px}
+    .mid-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .mid-card{background:#fff;border:1px solid #e6e6e6;padding:20px;text-align:center;min-height:150px}
+    .mid-card .icon{font-size:36px;margin-bottom:8px}
+    .mid-card h4{font-family:'Merriweather';font-size:15px;margin:8px 0}
+    .mid-card p{font-size:13px;color:var(--muted);margin:8px 0}
+    .mid-card .link{color:var(--red);font-weight:700;text-decoration:none;font-size:13px}
+
+    /* BOTTOM SECTION */
+    .bottom{display:flex;gap:28px;align-items:center;margin-top:26px;padding:28px;background:#fff;border:1px solid #eee}
+    .bottom .left{flex:1}
+    .bottom .left img{max-width:100%;height:auto;display:block}
+    .bottom .right{flex:1;padding:12px}
+    .bottom h1{font-family:'Merriweather';font-size:36px;margin:0 0 12px}
+    .bottom p{color:var(--muted);margin-bottom:18px}
+    .badges{display:flex;gap:12px}
+    .badge{display:inline-block;padding:10px 14px;border-radius:6px;background:#f4f4f4;border:1px solid #e6e6e6}
+
+    /* Responsive */
+    @media (max-width:1100px){
+      .top-grid{grid-template-columns:repeat(2,1fr)}
+      .mid-grid{grid-template-columns:repeat(2,1fr)}
+      .bottom{flex-direction:column}
+    }
+    @media (max-width:600px){
+      .top-grid{grid-template-columns:1fr}
+      .mid-grid{grid-template-columns:1fr}
+      nav.links{display:none}
+      .brand{font-size:28px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="navbar">
+      <div class="brand">Domino's Pizza</div>
+      <nav class="links" aria-label="Main navigation">
+        <a href="#">Our Menu</a>
+        <a href="#">Domino's Stores</a>
+        <a href="#">Gift Card</a>
+        <a href="#">Corporate Enquiry</a>
+        <a href="#">Contact</a>
+      </nav>
+      <div><button class="cta">Download App</button></div>
+    </header>
+
+    <!-- Top / Cards -->
+    <section class="top-section">
+      <h2>Order</h2>
+      <div class="top-grid">
+        <article class="card">
+          <div class="img-wrap"><img src="/mnt/data/Screenshot 2025-11-15 192943.png" alt="veg pizza"></div>
+          <h3>Veg Pizza</h3>
+          <p>A delight for veggie lovers! Choose from our wide range of delicious vegetarian pizzas, it's softer and tastier</p>
+          <div style="margin-top:auto"><button class="btn">View All</button></div>
+        </article>
+
+        <article class="card">
+          <div class="img-wrap"><img src="/mnt/data/Screenshot 2025-11-15 192959.png" alt="pizza with toppings"></div>
+          <h3>Our Menu</h3>
+          <p>Indulge into mouth-watering taste of Pizza mania range, perfect answer to all your food cravings</p>
+          <div style="margin-top:auto"><button class="btn">View All</button></div>
+        </article>
+
+        <article class="card">
+          <div class="img-wrap"><img src="/mnt/data/Screenshot 2025-11-15 193018.png" alt="non veg pizza"></div>
+          <h3>Our Menu</h3>
+          <p>Choose your favourite non-veg pizzas from the Domino's Pizza menu. Get fresh non-veg pizza with your choice of crusts & toppings</p>
+          <div style="margin-top:auto"><button class="btn">View All</button></div>
+        </article>
+
+        <article class="card">
+          <div class="img-wrap"><img src="/mnt/data/Screenshot 2025-11-15 193034.png" alt="special pizza"></div>
+          <h3>Our Menu</h3>
+          <p>Choose your favourite non-veg pizzas from the Domino's Pizza menu. Get fresh non-veg pizza with your choice of crusts & toppings</p>
+          <div style="margin-top:auto"><button class="btn">View All</button></div>
+        </article>
+
+        <article class="card">
+          <div class="img-wrap"><img src="/mnt/data/Screenshot 2025-11-15 192943.png" alt="veg pizza"></div>
+          <h3>Veg Pizza</h3>
+          <p>A delight for veggie lovers! Choose from our wide range of delicious vegetarian pizzas, it's softer and tastier</p>
+          <div style="margin-top:auto"><button class="btn">View All</button></div>
+        </article>
+
+        <article class="card">
+          <div class="img-wrap"><img src="/mnt/data/Screenshot 2025-11-15 192959.png" alt="pizza with toppings"></div>
+          <h3>Our Menu</h3>
+          <p>Indulge into mouth-watering taste of Pizza mania range, perfect answer to all your food cravings</p>
+          <div style="margin-top:auto"><button class="btn">View All</button></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Mid Section -->
+    <section class="mid-section">
+      <h2>Explore</h2>
+      <div class="mid-grid">
+        <div class="mid-card">
+          <div class="img-wrap"><img src="/mnt/data/Screenshot 2025-11-15 193034.png" alt="mid pizza" style="width:70px;height:70px;object-fit:cover;"></div>
+          <h4>Our Menu</h4>
+          <p>Explore our range of delicious Pizzas, delivered in 30 minutes</p>
+          <a class="link" href="#">Discover Pizza</a>
+        </div>
+        <div class="mid-card">
+          <div class="img-wrap"><img src="/mnt/data/Screenshot 2025-11-15 193018.png" alt="mid pizza" style="width:70px;height:70px;object-fit:cover;"></div>
+          <h4>Our Menu</h4>
+          <p>Explore our range of delicious Pizzas, delivered in 30 minutes</p>
+          <a class="link" href="#">Discover Pizza</a>
+        </div>
+        <div class="mid-card">
+          <div class="img-wrap"><img src="/mnt/data/Screenshot 2025-11-15 192943.png" alt="mid pizza" style="width:70px;height:70px;object-fit:cover;"></div>
+          <h4>Our Menu</h4>
+          <p>Explore our range of delicious Pizzas, delivered in 30 minutes</p>
+
+    <!-- Bottom -->
+    <section class="bottom">
+      <div class="left"><img src="/mnt/data/Screenshot 2025-11-15 192959.png" alt="app phones"></div>
+      <div class="right">
+        <h1>Unlock Exclusive Offers</h1>
+        <p>For lightning fast ordering experience download the Domino's app</p>
+        <div class="badges">
+          <div class="badge">Get it on Google Play</div>
+          <div class="badge">Download on the App Store</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
